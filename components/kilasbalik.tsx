@@ -21,7 +21,7 @@ export default function KilasBalik() {
   );
 
   const kegiatan = [
-    "/kegiatan/kegiatan11.jpg",
+    "/kegiatan/kegiatan1.jpg",
     "/kegiatan/kegiatan2.jpg",
     "/kegiatan/kegiatan11.jpg",
     "/kegiatan/kegiatan4.jpg",
