@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -198,7 +199,7 @@ export default function PortfolioPage() {
             viewport={{ once: true }}
             className="flex justify-center"
           >
-            <a href="/">
+            <Link href="/">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -222,13 +223,13 @@ export default function PortfolioPage() {
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D49A2E] to-[#E9AC37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
 
       {/* === FOOTER === */}
-            <Footer />
+      <Footer />
     </div>
   );
 }
