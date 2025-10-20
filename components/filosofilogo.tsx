@@ -47,7 +47,7 @@ export default function FilosofiLogo() {
   const { img, title, subtitle, text } = slides[current];
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 to-white py-12 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden">
+    <section className="relative bg-gradient-to-br bg-white py-12 sm:py-20 md:py-28 lg:py-32 px-4 sm:px-6 overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-[#a67c00] opacity-5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-40 h-40 sm:w-64 sm:h-64 lg:w-80 lg:h-80 bg-[#9b133b] opacity-5 rounded-full blur-3xl"></div>
