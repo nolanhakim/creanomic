@@ -21,16 +21,16 @@ export default function KilasBalik() {
   );
 
   const kegiatan = [
-    "/kegiatan/kegiatan1.jpg",
-    "/kegiatan/kegiatan2.jpg",
-    "/kegiatan/kegiatan11.jpg",
-    "/kegiatan/kegiatan4.jpg",
-    "/kegiatan/kegiatan5.jpg",
-    "/kegiatan/kegiatan6.jpg",
-    "/kegiatan/kegiatan7.jpg",
-    "/kegiatan/kegiatan8.jpg",
-    "/kegiatan/kegiatan9.jpg",
-    "/kegiatan/kegiatan10.jpg",
+    "/kegiatan/kegiatan1.png",
+    "/kegiatan/kegiatan2.png",
+    "/kegiatan/kegiatan11.png",
+    "/kegiatan/kegiatan4.png",
+    "/kegiatan/kegiatan5.png",
+    "/kegiatan/kegiatan6.png",
+    "/kegiatan/kegiatan7.png",
+    "/kegiatan/kegiatan8.png",
+    "/kegiatan/kegiatan9.png",
+    "/kegiatan/kegiatan10.png",
     
   ];
 

@@ -10,26 +10,26 @@ export default function EventPage() {
     {
       title: "EXHIBITION",
       desc: "Melalui rangkaian Exhibition yang inspiratif, kamu bakal diajak menyaksikan inovasi visual, karya interaktif, dan ide- ide segar hasil buah pikir anak muda penuh semangat kreasi! Ini bukan sekadar pameran, tapi ruang unjuk rasa kreativitas dan inovasi-dari Mahasiswa Fakultas Vokasi Universitas Brawijaya untuk masa depan yang lebih berdampak!",
-      img: "/kegiatan/kegiatan7.jpg",
-      img2: "/kegiatan/kegiatan8.jpg",
+      img: "/kegiatan/kegiatan7.png",
+      img2: "/kegiatan/kegiatan8.png",
     },
     {
       title: "ENTERTAINMENT",
       desc: "Nikmati keseruan malam penuh energi lewat penampilan spesial dari band, musik akustik, dan pertunjukan hiburan lainnya yang siap bikin kamu go with the flow bareng teman-teman se-UB! Saatnya rayakan kreativitas dengan cara yang paling seru- dengan tawa, musik, dan momen yang nggak terlupakan! Jangan lupa ajak semua temanmu dan jadi bagian dari vibes luar biasa ini!",
-      img: "/kegiatan/kegiatan2.jpg",
-      img2: "/kegiatan/kegiatan10.jpg",
+      img: "/kegiatan/kegiatan2.png",
+      img2: "/kegiatan/kegiatan10.png",
     },
     {
       title: "TALKSOW",
       desc: "Di rangkaian Creanomic juga ada Talkshow sebagai ruang diskusi interaktif bersama narasumber keren dan ahli di bidangnya yang akan membahas topik-topik menarik seputar bisnis, kreativitas, teknologi, dan dunia industri masa kini! Cocok banget buat kamu yang pengen upgrade wawasan, dapat motivasi baru, dan terinspirasi langsung dari para praktisi profesional yang udah terbukti sukses di bidangnya!",
-      img: "/kegiatan/kegiatan5.jpg",
-      img2: "/kegiatan/kegiatan12.jpg",
+      img: "/kegiatan/kegiatan5.png",
+      img2: "/kegiatan/kegiatan12.png",
     },
     {
       title: "COMPETITION",
       desc: "Kompetisi ini bukan sekadar lomba, tapi panggung besar untuk mengasah ide, membangun relasi, dan jadi inspirasi!Apapun latar belakangmu, saatnya buktikan kemampuanmu di hadapan juri dan peserta se-Indonesia!",
-      img: "/kegiatan/kegiatan9.jpg",
-      img2: "/kegiatan/kegiatan13.jpg",
+      img: "/kegiatan/kegiatan9.png",
+      img2: "/kegiatan/kegiatan13.png",
     },
   ];
 
