@@ -2,37 +2,25 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { useMemo } from "react";
 
 export default function PenampilanKarya() {
-  // Memoize data untuk menghindari re-render unnecessary
-  const karyaList = useMemo(
-    () => [
-      { id: 1, src: "/karya/whos.png", alt: "Karya 1" },
-      { id: 2, src: "/karya/whos.png", alt: "Karya 2" },
-      { id: 3, src: "/karya/whos.png", alt: "Karya 3" },
-      { id: 4, src: "/karya/whos.png", alt: "Karya 4" },
-      { id: 5, src: "/karya/whos.png", alt: "Karya 5" },
-    ],
-    []
-  );
+  const karyaList = [
+    { id: 1, src: "/karya/whos.png", alt: "Karya 1" },
+    { id: 2, src: "/karya/whos.png", alt: "Karya 2" },
+    { id: 3, src: "/karya/whos.png", alt: "Karya 3" },
+    { id: 4, src: "/karya/whos.png", alt: "Karya 4" },
+    { id: 5, src: "/karya/whos.png", alt: "Karya 5" },
+  ];
 
   return (
     <section className="relative bg-gradient-to-b from-white via-gray-50 to-white text-gray-900 py-16 sm:py-20 md:py-28 overflow-hidden">
-      {/* === BACKGROUND DECORATION (Reduced blur) === */}
+      {/* === BACKGROUND DECORATION === */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#E9AC37]/5 rounded-full blur-xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#E9AC37]/5 rounded-full blur-xl translate-x-1/2 translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* === JUDUL SECTION === */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex flex-col justify-center items-center mb-12 sm:mb-16 md:mb-20 text-center"
-        >
+        <div className="flex flex-col justify-center items-center mb-12 sm:mb-16 md:mb-20 text-center">
           <div className="inline-block mb-4">
             <span className="text-sm sm:text-base font-semibold text-[#E9AC37] tracking-widest uppercase">
               Our Winners
@@ -48,31 +36,19 @@ export default function PenampilanKarya() {
             PENAMPILAN KARYA
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#E9AC37] to-transparent mt-6" />
-        </motion.div>
+        </div>
 
         {/* === GRID KARYA === */}
         <div className="grid grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-6 md:gap-8">
           {karyaList.map((karya, index) => (
-            <motion.div
+            <div
               key={karya.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.4,
-                delay: index * 0.05,
-                ease: "easeOut",
-              }}
-              viewport={{ once: true, margin: "-50px" }}
-              className={`relative rounded-2xl sm:rounded-3xl overflow-hidden ${
+              className={`relative rounded-2xl sm:rounded-3xl overflow-hidden transition-all duration-300 ${
                 index >= 3 ? "hidden lg:block" : ""
               }`}
-              style={{
-                willChange: "transform",
-                contain: "layout style paint",
-              }}
             >
               {/* === CARD CONTAINER === */}
-              <div className="group relative h-48 xs:h-52 sm:h-60 md:h-72 bg-white shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E9AC37]/20 hover:border-[#E9AC37] transform hover:-translate-y-2 hover:scale-[1.02]">
+              <div className="group relative h-48 xs:h-52 sm:h-60 md:h-72 bg-white shadow-md hover:shadow-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E9AC37]/20 hover:border-[#E9AC37] hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 ease-out">
                 {/* === IMAGE === */}
                 <Image
                   src={karya.src}
@@ -80,10 +56,9 @@ export default function PenampilanKarya() {
                   width={400}
                   height={300}
                   quality={75}
-                  loading="lazy"
+                  loading={index > 2 ? "lazy" : "eager"}
                   sizes="(max-width: 640px) 33vw, (max-width: 1024px) 33vw, 20vw"
                   className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-out"
-                  style={{ willChange: "transform" }}
                 />
 
                 {/* === OVERLAY GRADIENT === */}
@@ -107,26 +82,14 @@ export default function PenampilanKarya() {
 
               {/* === BOTTOM ACCENT === */}
               <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-1 bg-gradient-to-r from-[#E9AC37] to-transparent transition-all duration-500" />
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* === VIEW MORE BUTTON === */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="flex justify-center mt-12 sm:mt-16"
-        >
+        <div className="flex justify-center mt-12 sm:mt-16">
           <Link href="/karya">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="group relative px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-[#E9AC37] to-[#D49A2E] text-white font-bold text-sm sm:text-base rounded-full shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
-              style={{ willChange: "transform" }}
-            >
+            <button className="group relative px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-[#E9AC37] to-[#D49A2E] text-white font-bold text-sm sm:text-base rounded-full shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden">
               <span className="relative z-10 flex items-center gap-2">
                 View More Winners
                 <svg
@@ -144,9 +107,9 @@ export default function PenampilanKarya() {
                 </svg>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-[#D49A2E] to-[#E9AC37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </motion.button>
+            </button>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
@@ -50,13 +49,7 @@ export default function PortfolioPage() {
       <Navbar />
 
       {/* === GAMBAR CREA1 DI BAWAH NAVBAR === */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, margin: "-50px" }}
-        className="relative w-full overflow-hidden"
-      >
+      <div className="relative w-full overflow-hidden">
         <Image
           src="/asset/crea1.png"
           alt="ornamen bawah navbar"
@@ -66,7 +59,7 @@ export default function PortfolioPage() {
           priority
           quality={85}
         />
-      </motion.div>
+      </div>
 
       {/* === HEADER SECTION === */}
       <section className="relative bg-gradient-to-b from-white via-gray-50 to-white text-gray-900 py-16 sm:py-20 md:py-28 overflow-hidden">
@@ -76,13 +69,7 @@ export default function PortfolioPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           {/* === JUDUL SECTION === */}
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col justify-center items-center mb-12 sm:mb-16 text-center"
-          >
+          <div className="flex flex-col justify-center items-center mb-12 sm:mb-16 text-center">
             <div className="inline-block mb-4">
               <span className="text-sm sm:text-base font-semibold text-[#E9AC37] tracking-widest uppercase">
                 Our Winners
@@ -98,59 +85,38 @@ export default function PortfolioPage() {
               PENAMPILAN KARYA
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-transparent via-[#E9AC37] to-transparent mt-6" />
-          </motion.div>
+          </div>
 
           {/* === FILTER BUTTONS === */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-wrap justify-center gap-3 mb-12"
-          >
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((category) => (
-              <motion.button
+              <button
                 key={category.id}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 onClick={() => setFilter(category.id)}
-                className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 ${
+                className={`px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 active:scale-95 ${
                   filter === category.id
                     ? "bg-[#E9AC37] text-white shadow-lg"
                     : "bg-white text-gray-700 hover:bg-gray-50 border border-[#E9AC37]/20"
                 }`}
               >
                 {category.label}
-              </motion.button>
+              </button>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* === GRID KARYA === */}
       <section className="relative bg-gradient-to-b from-white via-gray-50 to-white py-8 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            layout
-            transition={{ duration: 0.3 }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6 md:gap-8"
-          >
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6 md:gap-8">
             {filteredKarya.map((karya, index) => (
-              <motion.div
+              <div
                 key={karya.id}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ 
-                  duration: 0.3,
-                  delay: index * 0.03,
-                  layout: { duration: 0.3 }
-                }}
-                className="group relative rounded-2xl sm:rounded-3xl overflow-hidden will-change-transform"
+                className="group relative rounded-2xl sm:rounded-3xl overflow-hidden"
               >
                 {/* === CARD CONTAINER === */}
-                <div className="relative h-48 xs:h-52 sm:h-60 md:h-72 bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E9AC37]/20 hover:border-[#E9AC37]">
+                <div className="relative h-48 xs:h-52 sm:h-60 md:h-72 bg-white shadow-lg hover:shadow-2xl transition-all duration-300 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E9AC37]/20 hover:border-[#E9AC37] hover:-translate-y-2 hover:scale-[1.02]">
                   {/* === IMAGE === */}
                   <Image
                     src={karya.src}
@@ -179,19 +145,15 @@ export default function PortfolioPage() {
 
                 {/* === BOTTOM ACCENT === */}
                 <div className="absolute bottom-0 left-0 w-0 group-hover:w-full h-1 bg-gradient-to-r from-[#E9AC37] to-transparent transition-all duration-500" />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* === NO RESULTS === */}
           {filteredKarya.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
+            <div className="text-center py-20">
               <p className="text-xl text-gray-500">No winners found in this category</p>
-            </motion.div>
+            </div>
           )}
         </div>
       </section>
@@ -199,19 +161,9 @@ export default function PortfolioPage() {
       {/* === BACK TO HOME BUTTON === */}
       <section className="relative bg-gradient-to-b from-white via-gray-50 to-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="flex justify-center"
-          >
+          <div className="flex justify-center">
             <Link href="/">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-[#E9AC37] to-[#D49A2E] text-white font-bold text-sm sm:text-base rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
-              >
+              <button className="group relative px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-[#E9AC37] to-[#D49A2E] text-white font-bold text-sm sm:text-base rounded-full shadow-lg hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden">
                 <span className="relative z-10 flex items-center gap-2">
                   <svg
                     className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-300"
@@ -229,9 +181,9 @@ export default function PortfolioPage() {
                   Back to Home
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-[#D49A2E] to-[#E9AC37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </section>
 
