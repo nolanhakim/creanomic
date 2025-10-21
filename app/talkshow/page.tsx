@@ -6,15 +6,6 @@ import Image from "next/image";
 import Navbar from "@/components/navbar";
 
 export default function TalkshowSection() {
-  const talkshowImages = [
-    "/talkshow/coming1.png",
-    "/talkshow/coming1.png",
-    "/talkshow/coming1.png",
-    "/talkshow/coming1.png",
-    "/talkshow/coming1.png",
-    "/talkshow/coming1.png",
-  ];
-
   return (
     <section className="relative w-full min-h-screen bg-[#FFF9F5] text-[#2C1810] overflow-hidden">
       {/* === NAVBAR === */}
@@ -120,78 +111,86 @@ export default function TalkshowSection() {
           </div>
         </motion.div>
 
-        {/* Gallery Section Header */}
+        {/* Coming Soon Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="max-w-4xl mx-auto"
         >
-          <h3 className="text-3xl sm:text-4xl font-bold text-[#5F1124] mb-3">
-            Event Gallery
-          </h3>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Momen-momen inspiratif dari CREANOMIC Talkshow
-          </p>
-        </motion.div>
+          <div className="relative bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm rounded-3xl p-12 sm:p-16 md:p-20 shadow-2xl border border-[#5F1124]/10 overflow-hidden">
+            {/* Decorative Background Circles */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#5F1124]/10 to-amber-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-[#5F1124]/5 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/2"></div>
 
-        {/* Gallery Grid - Masonry Style */}
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {talkshowImages.map((src, index) => (
+            {/* Content */}
+            <div className="relative z-10 text-center">
+              {/* Icon */}
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                className="group relative"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#5F1124] to-[#8B1538] rounded-full mb-8 shadow-xl"
               >
-                {/* Image Container */}
-                <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
-                  {/* Gradient Overlay on Hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#5F1124]/80 via-[#5F1124]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                  
-                  {/* Image */}
-                  <div className="relative overflow-hidden">
-                    <Image
-                      src={src}
-                      alt={`Foto talkshow ${index + 1}`}
-                      width={500}
-                      height={350}
-                      className="object-cover w-full h-72 sm:h-80 group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-
-                  {/* Hover Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 z-20 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                      </div>
-                      <div className="text-white">
-                        <p className="font-semibold text-sm">Moment #{index + 1}</p>
-                        <p className="text-xs opacity-90">CREANOMIC Talkshow</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Border Animation */}
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-white/30 rounded-2xl transition-all duration-500"></div>
-                </div>
-
-                {/* Index Number - Floating */}
-                <div className="absolute -top-3 -right-3 w-10 h-10 bg-gradient-to-br from-[#5F1124] to-[#8B1538] rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-20">
-                  {index + 1}
-                </div>
+                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
               </motion.div>
-            ))}
+
+              {/* Title */}
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4"
+              >
+                <span className="bg-gradient-to-r from-[#5F1124] to-[#8B1538] bg-clip-text text-transparent">
+                  Coming Soon
+                </span>
+              </motion.h3>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="text-gray-600 text-base sm:text-lg mb-8 max-w-2xl mx-auto"
+              >
+                Galeri dokumentasi dari CREANOMIC Talkshow akan segera hadir.
+                Nantikan momen-momen inspiratif dan insight menarik dari para pembicara kami!
+              </motion.p>
+
+              {/* Animated Dots */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                viewport={{ once: true }}
+                className="flex items-center justify-center gap-2"
+              >
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0 }}
+                  className="w-3 h-3 bg-[#5F1124] rounded-full"
+                ></motion.div>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
+                  className="w-3 h-3 bg-[#5F1124] rounded-full"
+                ></motion.div>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
+                  className="w-3 h-3 bg-[#5F1124] rounded-full"
+                ></motion.div>
+              </motion.div>
+            </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom CTA Section */}
         <motion.div
