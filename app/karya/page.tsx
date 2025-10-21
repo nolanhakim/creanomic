@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -37,9 +37,12 @@ export default function PortfolioPage() {
     { id: "poster", label: "Creative Poster" },
   ];
 
-  const filteredKarya = filter === "all" 
-    ? karyaList 
-    : karyaList.filter(karya => karya.category === filter);
+  // Gunakan useMemo untuk menghindari re-filter berulang
+  const filteredKarya = useMemo(() => {
+    return filter === "all" 
+      ? karyaList 
+      : karyaList.filter(karya => karya.category === filter);
+  }, [filter]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
@@ -50,8 +53,8 @@ export default function PortfolioPage() {
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, margin: "-50px" }}
         className="relative w-full overflow-hidden"
       >
         <Image
@@ -61,6 +64,7 @@ export default function PortfolioPage() {
           height={400}
           className="w-full object-cover"
           priority
+          quality={85}
         />
       </motion.div>
 
@@ -75,7 +79,8 @@ export default function PortfolioPage() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="flex flex-col justify-center items-center mb-12 sm:mb-16 text-center"
           >
             <div className="inline-block mb-4">
@@ -99,7 +104,8 @@ export default function PortfolioPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="flex flex-wrap justify-center gap-3 mb-12"
           >
             {categories.map((category) => (
@@ -126,26 +132,25 @@ export default function PortfolioPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             layout
+            transition={{ duration: 0.3 }}
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-6 md:gap-8"
           >
             {filteredKarya.map((karya, index) => (
               <motion.div
                 key={karya.id}
                 layout
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ 
-                  type: "spring", 
-                  stiffness: 300, 
-                  damping: 20,
-                  delay: index * 0.05 
+                  duration: 0.3,
+                  delay: index * 0.03,
+                  layout: { duration: 0.3 }
                 }}
-                viewport={{ once: true }}
-                className="group relative rounded-2xl sm:rounded-3xl overflow-hidden"
+                className="group relative rounded-2xl sm:rounded-3xl overflow-hidden will-change-transform"
               >
                 {/* === CARD CONTAINER === */}
-                <div className="relative h-48 xs:h-52 sm:h-60 md:h-72 bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E9AC37]/20 hover:border-[#E9AC37] group">
+                <div className="relative h-48 xs:h-52 sm:h-60 md:h-72 bg-white shadow-lg hover:shadow-2xl transition-shadow duration-300 rounded-2xl sm:rounded-3xl overflow-hidden border border-[#E9AC37]/20 hover:border-[#E9AC37]">
                   {/* === IMAGE === */}
                   <Image
                     src={karya.src}
@@ -153,6 +158,8 @@ export default function PortfolioPage() {
                     width={400}
                     height={300}
                     className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500 ease-out"
+                    loading={index < 6 ? "eager" : "lazy"}
+                    quality={80}
                   />
 
                   {/* === OVERLAY GRADIENT === */}
@@ -195,8 +202,8 @@ export default function PortfolioPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true, margin: "-100px" }}
             className="flex justify-center"
           >
             <Link href="/">
