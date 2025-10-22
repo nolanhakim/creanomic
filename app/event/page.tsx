@@ -7,10 +7,16 @@ import Navbar from "@/components/navbar";
 
 export default function EventPage() {
   const events = [
+        {
+      title: "MARKET DAYS",
+      desc: "Market Days merupakan kegiatan pameran dan bazar yang bertujuan untuk mengembangkan semangat kewirausahaan di kalangan mahasiswa. Acara ini menjadi wadah bagi peserta untuk memperkenalkan produk dan jasa mereka kepada masyarakat luas, sekaligus membangun jejaring bisnis. Dengan konsep yang interaktif dan edukatif, Market Days diharapkan dapat meningkatkan literasi bisnis serta memperkuat ekonomi kreatif di lingkungan kampus.",
+      img: "/kegiatan/kegiatan7.png",
+      img2: "/kegiatan/kegiatan15.png",
+    },
     {
       title: "EXHIBITION",
       desc: "Melalui rangkaian Exhibition yang inspiratif, kamu bakal diajak menyaksikan inovasi visual, karya interaktif, dan ide- ide segar hasil buah pikir anak muda penuh semangat kreasi! Ini bukan sekadar pameran, tapi ruang unjuk rasa kreativitas dan inovasi-dari Mahasiswa Fakultas Vokasi Universitas Brawijaya untuk masa depan yang lebih berdampak!",
-      img: "/kegiatan/kegiatan7.png",
+      img: "/kegiatan/kegiatan14.png",
       img2: "/kegiatan/kegiatan8.png",
     },
     {

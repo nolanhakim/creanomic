@@ -5,7 +5,6 @@ import Visimisi from "@/components/visimisi";
 import FilosofiLogo from "@/components/filosofilogo";
 import Mascot from "@/components/mascot";
 import Kilasbalik from "@/components/kilasbalik";
-import Penampilankarya from "@/components/penampilankarya";
 import Sponsor from "@/components/sponsor";
 import Footer from "@/components/footer";
 import Image from "next/image";
@@ -85,8 +84,7 @@ export default function Home() {
       {/* === kilasbalik === */}
       <Kilasbalik />
 
-      {/* === PENAMPILAN KARYA === */}
-      <Penampilankarya />
+  
 
       {/* === SPONSOR === */}
       <Sponsor />
