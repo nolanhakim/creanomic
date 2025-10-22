@@ -7,27 +7,30 @@ import Navbar from "@/components/navbar";
 
 export default function MarchSection() {
   const merchItems = [
-    {
+   {
       id: 1,
       name: "Gantungan Kunci",
       category: "Accessories",
-      price: "Rp 10.000/@",
+      price: "Rp 10.000",
+      priceNote: "per pcs",
       image: "/merch/merch1.png",
-      description: "Gantungan kunci eksklusif dengan logo CREANOMIC yang stylish dan tahan lama"
+      description: "Gantungan kunci eksklusif creon maskot yang stylish dan tahan lama"
     },
     {
       id: 2,
       name: "Bando",
       category: "Accessories",
-      price: "Rp ??.000",
+      price: "Rp ??.???",
+      priceNote: "per pcs",
       image: "/merch/merch2.png",
-      description: "Bando cantik dengan desain CREANOMIC yang nyaman dipakai sehari-hari"
+      description: "Bando cantik dengan desain CREANOMIC yang nyaman dipakai "
     },
     {
       id: 3,
       name: "Pin",
       category: "Accessories",
-      price: "Rp 9.000/@",
+      price: "Rp 9.000",
+      priceNote: "per pcs",
       image: "/merch/merch3.png",
       description: "Pin enamel berkualitas tinggi dengan desain logo CREANOMIC"
     },
@@ -35,9 +38,10 @@ export default function MarchSection() {
       id: 4,
       name: "Sticker",
       category: "Accessories",
-      price: "Rp 5.000/@",
+      price: "Rp 5.000",
+      priceNote: "per pcs",
       image: "/merch/merch4.png",
-      description: "Paket sticker vinyl premium dengan berbagai desain CREANOMIC"
+      description: "Sticker  creon maskot dari CREANOMIC dengan kualitas premium "
     }
   ];
 
@@ -169,9 +173,14 @@ export default function MarchSection() {
                       {item.description}
                     </p>
                     <div className="flex flex-col gap-3">
-                      <span className="text-2xl font-bold bg-gradient-to-r from-[#5F1124] to-[#8B1538] bg-clip-text text-transparent">
-                        {item.price}
-                      </span>
+                      <div>
+                        <span className="text-2xl font-bold bg-gradient-to-r from-[#5F1124] to-[#8B1538] bg-clip-text text-transparent">
+                          {item.price}
+                        </span>
+                        <span className="text-sm text-gray-500 ml-2">
+                          {item.priceNote}
+                        </span>
+                      </div>
                       <button 
                         onClick={() => window.open(`https://wa.me/6281234567890?text=Halo, saya tertarik dengan ${item.name}`, '_blank')}
                         className="w-full bg-gradient-to-r from-[#5F1124] to-[#8B1538] text-white px-4 py-2.5 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
