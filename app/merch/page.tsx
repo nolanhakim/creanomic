@@ -11,7 +11,7 @@ export default function MarchSection() {
       id: 1,
       name: "Gantungan Kunci",
       category: "Accessories",
-      price: "Rp 35.000",
+      price: "Rp 10.000/@",
       image: "/merch/merch1.png",
       description: "Gantungan kunci eksklusif dengan logo CREANOMIC yang stylish dan tahan lama"
     },
@@ -19,7 +19,7 @@ export default function MarchSection() {
       id: 2,
       name: "Bando",
       category: "Accessories",
-      price: "Rp 45.000",
+      price: "Rp ??.000",
       image: "/merch/merch2.png",
       description: "Bando cantik dengan desain CREANOMIC yang nyaman dipakai sehari-hari"
     },
@@ -27,15 +27,15 @@ export default function MarchSection() {
       id: 3,
       name: "Pin",
       category: "Accessories",
-      price: "Rp 25.000",
+      price: "Rp 9.000/@",
       image: "/merch/merch3.png",
       description: "Pin enamel berkualitas tinggi dengan desain logo CREANOMIC"
     },
     {
       id: 4,
-      name: "Sticker Pack",
+      name: "Sticker",
       category: "Accessories",
-      price: "Rp 20.000",
+      price: "Rp 5.000/@",
       image: "/merch/merch4.png",
       description: "Paket sticker vinyl premium dengan berbagai desain CREANOMIC"
     }
