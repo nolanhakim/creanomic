@@ -24,9 +24,14 @@ export default function FooterSection() {
           <div className="flex flex-col items-center justify-center mb-12">
             {/* Brand Section */}
             <div className="flex flex-col items-center">
-              <h3 className="text-2xl font-bold glow-text text-[#45171D] mb-2">
+              <a
+                href="https://instagram.com/pit.creanomic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl font-bold glow-text text-[#45171D] mb-2 hover:text-[#5a1e26] transition-colors duration-300 cursor-pointer"
+              >
                 PIT CREANOMIC
-              </h3>
+              </a>
               <p className="text-sm text-gray-500">
                 Crafting digital experiences with creativity
               </p>
@@ -42,9 +47,14 @@ export default function FooterSection() {
               <span className="font-medium">© 2025 Made With</span>{" "}
               <span className="text-pink-500 text-lg animate-pulse">♡</span>{" "}
               <span className="font-medium">by</span>{" "}
-              <span className="font-semibold glow-text text-[#45171D]">
+              <a
+                href="https://www.instagram.com/catranolanhkm?igsh=NTMzZjVteWp2dWdm&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold glow-text text-[#45171D] hover:text-[#5a1e26] transition-colors duration-300 cursor-pointer"
+              >
                 PIT CREANOMIC
-              </span>
+              </a>
             </p>
             <p className="text-xs text-gray-500 mt-2">
               All rights reserved. Crafted with passion.
