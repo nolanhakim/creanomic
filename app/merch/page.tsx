@@ -13,7 +13,7 @@ export default function MarchSection() {
       category: "Accessories",
       price: "Rp 10.000",
       priceNote: "per pcs",
-      image: "/merch/merch1.png",
+      image: "/merch/merch3.png",
       description: "Gantungan kunci eksklusif creon maskot yang stylish dan tahan lama"
     },
     {
@@ -22,7 +22,7 @@ export default function MarchSection() {
       category: "Accessories",
       price: "Rp 9.000",
       priceNote: "per pcs",
-      image: "/merch/merch3.png",
+      image: "/merch/merch1.png",
       description: "Pin enamel berkualitas tinggi dengan desain logo CREANOMIC"
     },
     {
