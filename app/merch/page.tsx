@@ -18,15 +18,6 @@ export default function MarchSection() {
     },
     {
       id: 2,
-      name: "Bando",
-      category: "Accessories",
-      price: "Rp ??.???",
-      priceNote: "per pcs",
-      image: "/merch/merch2.png",
-      description: "Bando cantik dengan desain CREANOMIC yang nyaman dipakai "
-    },
-    {
-      id: 3,
       name: "Pin",
       category: "Accessories",
       price: "Rp 9.000",
@@ -35,15 +26,27 @@ export default function MarchSection() {
       description: "Pin enamel berkualitas tinggi dengan desain logo CREANOMIC"
     },
     {
-      id: 4,
-      name: "Sticker",
+      id: 3,
+      name: "Sticker A3",
       category: "Accessories",
-      price: "Rp 5.000",
+      price: "Rp 3.000",
       priceNote: "per pcs",
       image: "/merch/merch4.png",
-      description: "Sticker  creon maskot dari CREANOMIC dengan kualitas premium "
+      description: "Sticker creon maskot dari CREANOMIC dengan kualitas premium"
     }
   ];
+
+  const bundleItem = {
+    id: 4,
+    name: "Paket Bundling",
+    category: "Bundle Package",
+    price: "Rp 25.000",
+    priceNote: "hemat Rp 9.000",
+    originalPrice: "Rp 34.000",
+    image: "/merch/merch5.png",
+    description: "Paket lengkap berisi Gantungan Kunci, Pin, dan Sticker A6 dengan harga spesial",
+    items: ["Gantungan Kunci", "Pin", "Sticker A6"]
+  };
 
 
 
@@ -136,7 +139,7 @@ export default function MarchSection() {
 
         {/* Merchandise Grid */}
         <div className="relative max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
             {merchItems.map((item, index) => (
               <motion.div
                 key={item.id}
@@ -199,6 +202,98 @@ export default function MarchSection() {
               </motion.div>
             ))}
           </div>
+
+          {/* Bundle Package - Special Design */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div className="relative bg-gradient-to-br from-[#5F1124] to-[#8B1538] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
+              {/* Special Badge */}
+              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 z-10">
+                <span className="bg-amber-400 text-[#2C1810] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg animate-pulse">
+                  💰 BEST DEAL
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 p-6 sm:p-8 lg:p-12">
+                {/* Left Side - Image */}
+                <div className="relative h-64 sm:h-80 lg:h-auto lg:aspect-auto overflow-hidden rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-sm">
+                  <Image
+                    src={bundleItem.image}
+                    alt={bundleItem.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Right Side - Content */}
+                <div className="flex flex-col justify-center text-white">
+                  <div className="mb-3 sm:mb-4">
+                    <span className="bg-white/20 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs font-semibold">
+                      {bundleItem.category}
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
+                    {bundleItem.name}
+                  </h3>
+
+                  <p className="text-white/90 text-base sm:text-lg mb-4 sm:mb-6">
+                    {bundleItem.description}
+                  </p>
+
+                  {/* Items List */}
+                  <div className="mb-4 sm:mb-6">
+                    <p className="text-white/80 font-semibold mb-2 sm:mb-3 text-sm sm:text-base">Paket ini berisi:</p>
+                    <div className="grid grid-cols-1 gap-2">
+                      {bundleItem.items.map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <svg className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"/>
+                          </svg>
+                          <span className="text-white/90 text-sm sm:text-base">{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Price Section */}
+                  <div className="mb-5 sm:mb-6">
+                    <div className="flex items-baseline gap-2 sm:gap-3 mb-1 sm:mb-2 flex-wrap">
+                      <span className="text-white/60 line-through text-lg sm:text-xl">
+                        {bundleItem.originalPrice}
+                      </span>
+                      <span className="text-4xl sm:text-5xl font-bold text-amber-400">
+                        {bundleItem.price}
+                      </span>
+                    </div>
+                    <p className="text-amber-300 font-semibold text-base sm:text-lg">
+                      ✨ {bundleItem.priceNote}!
+                    </p>
+                  </div>
+
+                  {/* CTA Button */}
+                  <button 
+                    onClick={() => window.open(`https://wa.me/62895422854189?text=Halo, saya tertarik dengan ${bundleItem.name}`, '_blank')}
+                    className="w-full bg-white text-[#5F1124] px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-amber-400 hover:text-[#2C1810] transition-all duration-300 active:scale-95 sm:hover:scale-105 flex items-center justify-center gap-2 sm:gap-3 shadow-xl"
+                  >
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    <span className="truncate">Order Bundling Sekarang</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Decorative Elements */}
+              <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 bg-white/5 rounded-full blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 sm:w-48 sm:h-48 bg-amber-500/20 rounded-full blur-2xl"></div>
+            </div>
+          </motion.div>
         </div>
 
 

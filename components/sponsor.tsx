@@ -43,6 +43,7 @@ export default function SponsorMedia() {
   const sponsorList = [
     "/sponsor/blumen.jpg",
     "/sponsor/photo.png",
+    "/sponsor/gasol.png",
     "/medpart/medpart1.png",
     "/medpart/medpart2.png",
     "/medpart/medpart3.png",
