@@ -13,7 +13,7 @@ export default function MarchSection() {
       category: "Accessories",
       price: "Rp 10.000",
       priceNote: "per pcs",
-      image: "/merch/merch3.png",
+      image: "/merch/ganci.png",
       description: "Gantungan kunci eksklusif creon maskot yang stylish dan tahan lama"
     },
     {
@@ -22,7 +22,7 @@ export default function MarchSection() {
       category: "Accessories",
       price: "Rp 9.000",
       priceNote: "per pcs",
-      image: "/merch/merch1.png",
+      image: "/merch/pin.png",
       description: "Pin enamel berkualitas tinggi dengan desain logo CREANOMIC"
     },
     {
@@ -31,7 +31,7 @@ export default function MarchSection() {
       category: "Accessories",
       price: "Rp 3.000",
       priceNote: "per pcs",
-      image: "/merch/merch4.png",
+      image: "/merch/sticker.png",
       description: "Sticker creon maskot dari CREANOMIC dengan kualitas premium"
     }
   ];
@@ -43,7 +43,7 @@ export default function MarchSection() {
     price: "Rp 25.000",
     priceNote: "hemat Rp 9.000",
     originalPrice: "Rp 34.000",
-    image: "/merch/merch5.png",
+    image: "/merch/bundling.png",
     description: "Paket lengkap berisi Gantungan Kunci, Pin, dan Sticker A6 dengan harga spesial",
     items: ["Gantungan Kunci", "Pin", "Sticker A6"]
   };
