@@ -278,7 +278,7 @@ export default function MarchSection() {
 
                   {/* CTA Button */}
                   <button 
-                    onClick={() => window.open(`https://wa.me/62895422854189?text=Halo, saya tertarik dengan ${bundleItem.name}`, '_blank')}
+                    onClick={() => window.open(`https://wa.me/6289601876714?text=Halo, saya tertarik dengan ${bundleItem.name}`, '_blank')}
                     className="w-full bg-white text-[#5F1124] px-6 py-3 sm:px-8 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-amber-400 hover:text-[#2C1810] transition-all duration-300 active:scale-95 sm:hover:scale-105 flex items-center justify-center gap-2 sm:gap-3 shadow-xl"
                   >
                     <svg className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
