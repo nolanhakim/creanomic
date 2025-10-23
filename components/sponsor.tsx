@@ -44,6 +44,7 @@ export default function SponsorMedia() {
     "/sponsor/blumen.jpg",
     "/sponsor/photo.png",
     "/sponsor/gasol.png",
+    "/sponsor/phd.png",
     "/medpart/medpart1.png",
     "/medpart/medpart2.png",
     "/medpart/medpart3.png",
