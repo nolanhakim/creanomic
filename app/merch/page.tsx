@@ -185,7 +185,7 @@ export default function MarchSection() {
                         </span>
                       </div>
                       <button 
-                        onClick={() => window.open(`https://wa.me/62895422854189?text=Halo, saya tertarik dengan ${item.name}`, '_blank')}
+                        onClick={() => window.open(`https://wa.me/6289601876714?text=Halo, saya tertarik dengan ${item.name}`, '_blank')}
                         className="w-full bg-gradient-to-r from-[#5F1124] to-[#8B1538] text-white px-4 py-2.5 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
                       >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
