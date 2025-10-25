@@ -16,6 +16,7 @@ export default function Navbar() {
     { name: "Merchandise", href: "/merch" },
     { name: "Competition", href: "/competition" },
     { name: "Talkshow", href: "/talkshow" },
+       { name: "Finalis", href: "https://www.creanomic.my.id/" }
   ];
 
   return (
