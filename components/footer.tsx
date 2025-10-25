@@ -25,7 +25,7 @@ export default function FooterSection() {
             {/* Brand Section */}
             <div className="flex flex-col items-center">
               <a
-                href="https://instagram.com/pit.creanomic"
+                href="https://www.instagram.com/catranolanhkm?igsh=NTMzZjVteWp2dWdm&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-2xl font-bold glow-text text-[#45171D] mb-2 hover:text-[#5a1e26] transition-colors duration-300 cursor-pointer"
